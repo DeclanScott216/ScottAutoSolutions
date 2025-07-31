@@ -2,111 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scotty Auto Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scotty Auto</title>
   <style>
-    /* Background image and base styling */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap');
+
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1581090700227-1e8eaff3e1b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: radial-gradient(ellipse at center, #0b0c1a 0%, #000010 100%);
+      color: #ddd;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* Overlay for readability */
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 30px 20px;
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: transparent url('https://cdn.pixabay.com/photo/2014/04/03/10/59/star-311002_960_720.png') repeat;
+      background-size: 50px 50px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      animation: twinkle 20s linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {opacity: 0.15;}
+      50% {opacity: 0.25;}
+    }
+
+    .container {
+      background: rgba(10, 10, 30, 0.85);
       max-width: 900px;
-      margin: 0 auto;
-      min-height: 100vh;
+      margin: 40px auto 60px auto;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px 3px #1a1affaa;
+      position: relative;
+      z-index: 1;
     }
 
     header {
       text-align: center;
-      padding-bottom: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #2e3a59;
-    }
-
-    header p {
-      font-size: 1.1em;
-      margin-top: 10px;
-      color: #444;
-    }
-
-    section {
       margin-bottom: 30px;
     }
 
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #66ccff;
+      margin: 0;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 10px #66ccffaa, 0 0 20px #66ccff88;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      color: #a0d8ff;
+      margin-top: 6px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    section {
+      margin-bottom: 35px;
+    }
+
     h2 {
-      color: #2e3a59;
+      font-family: 'Orbitron', sans-serif;
+      color: #99ccff;
+      font-weight: 700;
+      font-size: 2rem;
+      border-bottom: 2px solid #66ccff;
+      padding-bottom: 6px;
+      margin-bottom: 15px;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 5px #66ccffaa;
+    }
+
+    p, ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 25px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
     }
 
     footer {
       text-align: center;
+      font-size: 0.9rem;
+      color: #6666aa;
       margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
+      letter-spacing: 0.05em;
     }
 
     a {
-      color: #0066cc;
+      color: #66ccff;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     a:hover {
+      color: #99ddff;
       text-decoration: underline;
+    }
+
+    .contact p {
+      margin: 6px 0;
+      font-size: 1.15rem;
+    }
+
+    .payments {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .payments img {
+      height: 40px;
+      filter: drop-shadow(0 0 3px #66ccffaa);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .payments img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .payments {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
+  <div class="container">
     <header>
-      <h1>Scotty Auto Solutions</h1>
-      <p>Mobile Mechanic Services – We Come to You</p>
+      <h1>Scotty Auto</h1>
+      <p>Mobile Mechanic Services</p>
     </header>
 
     <section>
       <h2>About</h2>
-      <p>Hi, I'm <strong>Declan W Scott</strong>. I run Scotty Auto Solutions, a mobile mechanic service based in <strong>Cumming, Georgia</strong>. I bring quality automotive care straight to your driveway, office, or roadside — saving you time and towing costs. Whether it’s a quick tune-up or emergency help, I’m just a call or text away.</p>
+      <p>Hi, I'm Declan Scott. I run Scotty Auto, a mobile mechanic service based in Cumming, Georgia. I bring dependable automotive care straight to your driveway, office, or roadside — saving you time, towing fees, and shop delays.</p>
+      <p>Before launching this business, I worked as a jet engine mechanic on C‑130 aircraft at Dobbins Air Reserve Base. In that environment, precision, discipline, and strict adherence to maintenance procedures were non‑negotiable — lives depended on it. Every task had to be done right, by the book, every time.</p>
+      <p>I bring that same level of care and attention to detail to every vehicle I service. From routine maintenance to diagnostics and repairs, you can trust that your car is in experienced and capable hands — with no shortcuts, ever.</p>
+      <p>Whether you need basic maintenance, a second opinion, or roadside help, I’m just a call or text away.</p>
     </section>
 
     <section>
       <h2>Services Offered</h2>
       <ul>
-        <li>Oil Changes & Fluid Top-Offs</li>
-        <li>Battery Testing & Replacement</li>
-        <li>Brake Pad & Rotor Replacement</li>
-        <li>Starter & Alternator Diagnostics</li>
-        <li>Check Engine Light Diagnosis</li>
-        <li>Mobile Tune-Ups</li>
-        <li>Radiator & Cooling System Checks</li>
-        <li>Flat Tire Replacement (spare installs)</li>
-        <li>Pre-Purchase Vehicle Inspections</li>
-        <li>Emergency Jump Starts</li>
-        <li>General Engine Troubleshooting</li>
-        <li>Mobile Fleet Maintenance (on request)</li>
+        <li><strong>🛠️ General Maintenance</strong>
+          <ul>
+            <li>Oil Changes (Conventional & Synthetic)</li>
+            <li>Fluid Top‑Offs (Coolant, Brake, Transmission, Power Steering)</li>
+            <li>Windshield Wiper Replacement</li>
+            <li>Air Filter Replacement</li>
+            <li>Cabin Filter Replacement</li>
+            <li>Tire Rotation & Pressure Checks</li>
+            <li>Battery Testing & Replacement</li>
+            <li>Spark Plug Replacement</li>
+            <li>Mobile Tune‑Ups</li>
+          </ul>
+        </li>
+        <li><strong>🚗 Brake & Suspension</strong>
+          <ul>
+            <li>Brake Pad Replacement</li>
+            <li>Brake Rotor Replacement</li>
+            <li>Brake Fluid Flush</li>
+            <li>Brake Caliper Replacement</li>
+            <li>Suspension Inspection</li>
+            <li>Shock & Strut Replacement</li>
+            <li>Control Arm or Bushing Replacement</li>
+          </ul>
+        </li>
+        <li><strong>⚙️ Diagnostics & Electrical</strong>
+          <ul>
+            <li>Check Engine Light Diagnosis (OBD‑II)</li>
+            <li>Alternator Testing & Replacement</li>
+            <li>Starter Motor Replacement</li>
+            <li>Battery Cable or Terminal Cleaning/Replacement</li>
+            <li>Fuse Box & Relay Troubleshooting</li>
+            <li>Power Window/Mirror Issues</li>
+            <li>Ignition Coil Diagnosis</li>
+            <li>Electrical Shorts & Wiring Issues</li>
+          </ul>
+        </li>
+        <li><strong>🔥 Engine & Cooling System</strong>
+          <ul>
+            <li>Radiator Flush or Replacement</li>
+            <li>Thermostat Replacement</li>
+            <li>Water Pump Replacement</li>
+            <li>Serpentine Belt or Tensioner Replacement</li>
+            <li>Coolant Leak Detection</li>
+            <li>Head Gasket Diagnosis</li>
+            <li>Throttle Body Cleaning</li>
+            <li>Mass Air Flow Sensor Cleaning/Replacement</li>
+          </ul>
+        </li>
+        <li><strong>🧰 Drivetrain & Underbody</strong>
+          <ul>
+            <li>CV Axle Replacement</li>
+            <li>Differential Fluid Service</li>
+            <li>Transmission Fluid Change (drain & fill only)</li>
+            <li>Drive Shaft Inspection</li>
+            <li>Exhaust Leak Diagnosis</li>
+          </ul>
+        </li>
+        <li><strong>🚨 Emergency Services</strong>
+          <ul>
+            <li>Emergency Jump Starts</li>
+            <li>Flat Tire Changes (spare installs)</li>
+            <li>Fuel Delivery (in case of emergency)</li>
+            <li>Lockout Assistance (non‑destructive access)</li>
+          </ul>
+        </li>
+        <li><strong>🚘 Specialized & Extra Services</strong>
+          <ul>
+            <li>Pre‑Purchase Vehicle Inspections</li>
+            <li>Fleet Vehicle Maintenance (businesses, delivery, contractors)</li>
+            <li>Seasonal Readiness Checks (summer/winter inspections)</li>
+            <li>Custom Maintenance Schedules</li>
+            <li>Vehicle Scanning Reports (send via text/email)</li>
+          </ul>
+        </li>
       </ul>
+      <p><em>Please inquire about other services not listed here.</em></p>
     </section>
 
     <section>
+      <h2>Payment Methods</h2>
+      <p>You can pay using the following methods:</p>
+      <ul>
+        <li>💵 Cash</li>
+        <li>📲 Cash App: <strong>$DeclanScott216</strong></li>
+        <li>📲 Venmo: <strong>@Declan-Scott-216</strong></li>
+        <li>🍎 Apple Pay (contact for number)</li>
+      </ul>
+      <div class="payments" aria-label="Payment Logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Apple_Pay_logo.svg/512px-Apple_Pay_logo.svg.png" alt="Apple Pay" title="Apple Pay" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Venmo_logo.svg/512px-Venmo_logo.svg.png" alt="Venmo Logo" title="Venmo" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cash_App_logo.svg/512px-Cash_App_logo.svg.png" alt="Cash App Logo" title="Cash App" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cash-Icon.svg/512px-Cash-Icon.svg.png" alt="Cash Logo" title="Cash" />
+      </div>
+    </section>
+
+    <section class="contact">
       <h2>Contact</h2>
-      <p>📞 Call or Text: <a href="tel:+17708715078">(770) 871-5078</a></p>
+      <p>📞 Call or Text: <a href="tel:+17708715078">(770) 871‑5078</a></p>
+      <p>✉️ Email: <a href="mailto:2dwscott216@gmail.com">2dwscott216@gmail.com</a></p>
       <p>📍 Based in Cumming, Georgia — serving surrounding areas</p>
     </section>
 
     <footer>
-      <p>&copy; 2025 Scotty Auto Solutions. All rights reserved.</p>
+      <p>&copy; 2025 Scotty Auto. All rights reserved.</p>
     </footer>
   </div>
 </body>
